@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Tambah Resi Baru</h2>
+<form method="POST" action="{{ url_for('add_receipt') }}">
+    <label for="toko">Nama Toko E-commerce:</label>
+    <input type="text" id="toko" name="toko" required>
+
+    <label for="nomor_pesanan">Nomor Pesanan:</label>
+    <input type="text" id="nomor_pesanan" name="nomor_pesanan" required>
+
+    <label for="tanggal">Tanggal Pembelian:</label>
+    <input type="date" id="tanggal" name="tanggal" required>
+
+    <label for="deskripsi_tautan">Deskripsi Singkat / Tautan Resi (Opsional):</label>
+    <textarea id="deskripsi_tautan" name="deskripsi_tautan" rows="4"></textarea>
+
+    <button type="submit">Tambah Resi</button>
+</form>
+{% endblock %}

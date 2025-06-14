@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Daftar Resi Tersimpan</h2>
+
+{% if receipts %}
+<table>
+    <thead>
+        <tr>
+            <th>Toko E-commerce</th>
+            <th>Nomor Pesanan</th>
+            <th>Tanggal Pembelian</th>
+            <th>Deskripsi / Tautan Resi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for receipt in receipts %}
+        <tr>
+            <td>{{ receipt.toko }}</td>
+            <td>{{ receipt.nomor_pesanan }}</td>
+            <td>{{ receipt.tanggal }}</td>
+            <td>{{ receipt.deskripsi_tautan }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>Belum ada resi yang tersimpan. <a href="{{ url_for('add_receipt') }}">Tambahkan sekarang!</a></p>
+{% endif %}
+{% endblock %}

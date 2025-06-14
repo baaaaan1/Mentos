@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Dashboard</h2>
+<p>Selamat datang, {{ username }}! Ini adalah dashboard Anda.</p>
+<p>Anda bisa:</p>
+<ul>
+    <li><a href="{{ url_for('add_receipt') }}">Menambah resi baru</a></li>
+    <li><a href="{{ url_for('view_receipts') }}">Melihat semua resi</a></li>
+</ul>
+{% endblock %}
